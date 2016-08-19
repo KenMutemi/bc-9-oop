@@ -1,6 +1,5 @@
 class NotesApplication(object):
 
-
     def __init__(self, author, notes=[]):
         self.author = author
         self.notes = notes
@@ -9,10 +8,12 @@ class NotesApplication(object):
         self.notes.append(self.note_content)
 
     def list(self):
-        pass
+        return "Note ID: " + "" + notes.index(self.note_content)
+            "\n" + self.note_content + "\n" +
+            "By Author " + self.author
 
     def get(self, note_id):
-        return note_id
+        return notes[note_id]
 
     def search(self, search_text):
 
@@ -23,4 +24,6 @@ class NotesApplication(object):
 
     def edit(self, note_id, new_content):
         notes[note_id] = new_content
+
+note = NotesApplication("Kennedy").create()
 
