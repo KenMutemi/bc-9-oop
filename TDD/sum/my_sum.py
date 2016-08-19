@@ -1,5 +1,10 @@
 def my_sum(x, y):
     '''
-    Takes in two nukbers and returns its sum
+    Takes in two numbers and returns its sum
     '''
-    pass
+
+    if type(x) != int or type(y) != int:
+        return "Invalid input"
+    else:
+        return x + y
+
