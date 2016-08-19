@@ -1,14 +1,29 @@
-from student import Student
+# Create  at least 10 students
+from students import Student
 
-s1 = Student("Kennedy", "Mutemi")
-s2 = Student("Victor", "Muthomi")
-s3 = Student("Didas", "Mbalanya")
-s4 = Student("Cynthia", "Chepkemoi")
-s5 = Student("Paul", "Kauhi")
-s6 = Student("David", "Keya")
-s7 = Student("Julius", "Kikapu")
-s8 = Student("John", "Mbalanya")
-s9 = Student("Luke", "Skywalker")
-s10 = Student("Mary", "Muthoni")
 
-s1.attend_class(fname=s1.first_name, lname=s1.last_name, date="2016-05-23")
+s1 = Student('Kelvin', 'Chiteri')
+s1.attend_class()
+
+s2 = Student('Victor', 'Muthomi')
+s2.attend_class()
+
+s3 = Student('Cynthia', 'Chepkemoi')
+s3.attend_class()
+
+s4 = Student('Kennedy', 'Mutemi')
+s4.attend_class()
+
+s5 = Student('Paul', 'Kauhi')
+s5.attend_class()
+
+
+s6 = Student('Didas', 'Malanya')
+s7 = Student('David', 'Keya')
+s8 = Student('James', 'Shitandu')
+s9 = Student('Julius', 'Kikapu')
+s10 = Student('Kibet', 'Nganyi')
+s11 = Student('Kibet', 'Nganyi')
+
+j = Student()
+j.get_class_attendance()

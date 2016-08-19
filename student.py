@@ -1,25 +1,56 @@
 from datetime import date
 
-class Student(object):
+map_ = {
+        'KE' : "Kenya",
+        "UG" : 'Uganda'
+}
 
-    map_ = {
-            'KE': 'Kenya',
-            'NG': 'Nigeria',
-            'UG': 'Uganda',
-            'TZ': 'Tanzania'
-            }
+class Student(object): # This object here is a class object
+    
+    count = 0
+    class_attendance = [] # Takes dates as keys and list of attendance as values
 
-    def __init__(self, first_name, last_name, cc='KE'):
-        prev_id = 0
-        if prev_id:
-            self.id = id
-        self.first_name = first_name
-        self.last_name = last_name
-        self.country = map_['cc']
+
+
+    def __init__(self,  fname = '', lname = '', cc = "KE"): # Here  you can provide the default parameters
+
+        # Generate sequential unique id
+        Student.count += 1
+        self.id = Student.count  #Using two underscore makes it private
+        self.fname = fname
+        self.lname = lname
+        self.country = map_[cc]
 
     def attend_class(self, **kwargs):
-        self.date = date.today()
+        '''
+        default values:
+            location  = 'Hogwarts'
+            date      = current_date
+            teacher   = 'Alex'
+        '''
+        location = 'Hogwarts'
+        m_date = date.today().strftime("%B %d %Y")
+        teacher = 'Alex'
 
-        for key, value in kwargs.iteritems():
-            print key + value
+        # Take the data and append it the attendance list
+        data = [m_date, self.fname, teacher, location]
 
+        Student.class_attendance.append(data)
+
+    # Print all data in the attendance list
+    def get_class_attendance(self):
+        my_test_date = date.today().strftime("%B %d %Y")
+
+        no_of_attendees = 0
+
+        attendance = Student.class_attendance
+        print attendance
+
+        for item in attendance:
+            print item
+
+            for details in range(len(item)):
+                if item[details] == my_test_date:
+                    no_of_attendees += 1
+                    
+        print "%s STUDENTS ATTENDED ON %s" % (no_of_attendees, my_test_date)
