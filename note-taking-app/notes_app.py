@@ -1,29 +1,32 @@
 class NotesApplication(object):
 
-    def __init__(self, author, notes=[]):
+
+    def __init__(self, author):
         self.author = author
-        self.notes = notes
+        self.notes = []
     
     def create(self, note_content):
-        self.notes.append(self.note_content)
-
+        self.notes.append(note_content)
+        
     def list(self):
-        return "Note ID: " + "" + notes.index(self.note_content)
-            "\n" + self.note_content + "\n" +
-            "By Author " + self.author
-
+        print("Note ID: " + self.author + " - " + str(self.notes))
+        
     def get(self, note_id):
-        return notes[note_id]
+        if note_id in self.notes:
+                return note_id
+        else:
+                return "Invalid ID"
+        
+        
+NotesApplication("Kennedy").create("Hello, World!")
+NotesApplication("Cynthia").create("Hello, World!")
+NotesApplication("Victor").create("Hello, World!")
+NotesApplication("Didas").create("Hello, World!")
+NotesApplication("Muthama").create("Hello, World!")
 
-    def search(self, search_text):
 
-        return "Showing results for search " + search_text
-
-    def delete(self, note_id):
-        del notes[note_id]
-
-    def edit(self, note_id, new_content):
-        notes[note_id] = new_content
-
-note = NotesApplication("Kennedy").create()
-
+NotesApplication("Muthama").list()
+NotesApplication("Kennedy").list()
+NotesApplication("Victor").list()
+NotesApplication("Didas").list()
+NotesApplication("Cynthia").list()
