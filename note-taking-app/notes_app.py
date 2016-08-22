@@ -12,10 +12,10 @@ class NotesApplication(object):
         print("Note ID: " + self.author + " - " + str(self.notes))
         
     def get(self, note_id):
-        if note_id in self.notes:
-                return note_id
+        if note_id in self.notes and note_id > len(self.notes):
+            return note_id
         else:
-                return "Invalid ID"
+            return "Invalid ID"
         
         
 NotesApplication("Kennedy").create("Hello, World!")
